@@ -1,6 +1,7 @@
 # Genius Invokation TCG zzmode
 
 Play Genius Invokation TCG in an interesting mode
+
 For Linux x86_64 zh_CN.utf8
 
 #### Installation
