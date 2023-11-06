@@ -7,7 +7,7 @@
 #include "zfile.h"
 #include "namels.h"
 
-float VERSION = 2.4;
+float VERSION = 2.5;
 int IFGEN = 0;
 
 void reask(int charMany, char *output, char *character);
@@ -272,7 +272,6 @@ void reask(int charMany, char *output, char *character)
 	if (a == 'y')
 	{
 		system("rm character.cfg");
-		printf("注意：对配置文件的调整在下次启动时才会生效\n");
 		reask(charMany, output, character);
 	}
 	else if (a == 'r')

@@ -1,9 +1,10 @@
 #include<string.h>
 #include<stdio.h>
 void zhprintf(char *p);
-void see(int charMany, char *output, char *character); 
+void see(int charMany, char *output, char *character);
 void zhprintf(char *p)
 {
+	//printf("%s",p);
 	if (!strcmp(p, "NNNNN"))
 	{
 		printf("=====  ");
@@ -79,6 +80,16 @@ void zhprintf(char *p)
 		printf("公子   ");
 		return;
 	}
+	if (!strcmp(p, "Candy"))
+	{
+		printf("坎蒂丝 ");
+		return;
+	}
+	if (!strcmp(p, "Nilou"))
+	{
+		printf("妮露   ");
+		return;
+	}
 	if (!strcmp(p, "Diluk"))
 	{
 		printf("迪卢克 ");
@@ -114,6 +125,11 @@ void zhprintf(char *p)
 		printf("胡桃   ");
 		return;
 	}
+	if (!strcmp(p, "Yanfi"))
+	{
+		printf("烟绯   ");
+		return;
+	}
 	if (!strcmp(p, "Dixiy"))
 	{
 		printf("迪希雅 ");
@@ -121,7 +137,7 @@ void zhprintf(char *p)
 	}
 	if (!strcmp(p, "Feixr"))
 	{
-		printf("奥兹   ");
+		printf("菲谢尔 ");
 		return;
 	}
 	if (!strcmp(p, "Leize"))
@@ -164,6 +180,11 @@ void zhprintf(char *p)
 		printf("丽莎   ");
 		return;
 	}
+	if (!strcmp(p, "Duori"))
+	{
+		printf("多莉   ");
+		return;
+	}
 	if (!strcmp(p, "Shatg"))
 	{
 		printf("砂糖   ");
@@ -182,6 +203,11 @@ void zhprintf(char *p)
 	if (!strcmp(p, "Xiaoo"))
 	{
 		printf("魈     ");
+		return;
+	}
+	if (!strcmp(p, "Wanye"))
+	{
+		printf("万叶   ");
 		return;
 	}
 	if (!strcmp(p, "Sanbg"))
@@ -232,6 +258,11 @@ void zhprintf(char *p)
 	if (!strcmp(p, "Yaoao"))
 	{
 		printf("瑶瑶   ");
+		return;
+	}
+	if (!strcmp(p, "Baizh"))
+	{
+		printf("白术   ");
 		return;
 	}
 	if (!strcmp(p, "Bingy"))

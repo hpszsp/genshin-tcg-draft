@@ -1,7 +1,7 @@
 #include<string.h>
 #include<stdio.h>
 void zhprintf(char *p);
-void see(int charMany, char *output, char *character); 
+void see(int charMany, char *output, char *character);
 void zhprintf(char *p)
 {
 	//printf("%s",p);
@@ -80,6 +80,16 @@ void zhprintf(char *p)
 		printf("¹«×Ó   ");
 		return;
 	}
+	if (!strcmp(p, "Candy"))
+	{
+		printf("¿²µÙË¿ ");
+		return;
+	}
+	if (!strcmp(p, "Nilou"))
+	{
+		printf("ÄÝÂ¶   ");
+		return;
+	}
 	if (!strcmp(p, "Diluk"))
 	{
 		printf("µÏÂ¬¿Ë ");
@@ -115,6 +125,11 @@ void zhprintf(char *p)
 		printf("ºúÌÒ   ");
 		return;
 	}
+	if (!strcmp(p, "Yanfi"))
+	{
+		printf("ÑÌç³   ");
+		return;
+	}
 	if (!strcmp(p, "Dixiy"))
 	{
 		printf("µÏÏ£ÑÅ ");
@@ -122,7 +137,7 @@ void zhprintf(char *p)
 	}
 	if (!strcmp(p, "Feixr"))
 	{
-		printf("°Â×È   ");
+		printf("·ÆÐ»¶û ");
 		return;
 	}
 	if (!strcmp(p, "Leize"))
@@ -165,6 +180,11 @@ void zhprintf(char *p)
 		printf("ÀöÉ¯   ");
 		return;
 	}
+	if (!strcmp(p, "Duori"))
+	{
+		printf("¶àÀò   ");
+		return;
+	}
 	if (!strcmp(p, "Shatg"))
 	{
 		printf("É°ÌÇ   ");
@@ -183,6 +203,11 @@ void zhprintf(char *p)
 	if (!strcmp(p, "Xiaoo"))
 	{
 		printf("÷Ì     ");
+		return;
+	}
+	if (!strcmp(p, "Wanye"))
+	{
+		printf("ÍòÒ¶   ");
 		return;
 	}
 	if (!strcmp(p, "Sanbg"))
@@ -233,6 +258,11 @@ void zhprintf(char *p)
 	if (!strcmp(p, "Yaoao"))
 	{
 		printf("ÑþÑþ   ");
+		return;
+	}
+	if (!strcmp(p, "Baizh"))
+	{
+		printf("°×Êõ   ");
 		return;
 	}
 	if (!strcmp(p, "Bingy"))
