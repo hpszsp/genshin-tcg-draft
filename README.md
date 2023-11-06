@@ -20,3 +20,5 @@ For Windows & Linux x86_64 zh_CN.utf8
 修改了一处描述：Fixer由“奥兹”改为“菲谢尔”
 
 修改了部分角色在character.cfg的位置，使其与网站ambr.top一致
+
+删除了关于删除配置文件的错误描述
