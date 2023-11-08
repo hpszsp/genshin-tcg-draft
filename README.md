@@ -1,4 +1,4 @@
-# Genius Invokation TCG zzmode V2.5
+# Genius Invokation TCG draft pick mode V2.6
 
 Play Genius Invokation TCG in an interesting mode
 
@@ -12,6 +12,16 @@ For Windows & Linux x86_64 zh_CN.utf8
 目前对应原神七圣召唤4.2版本的角色池
 
 # Changelog
+
+## V2.6
+
+改变了主程序名，现在由zzmode改变为draft
+
+修复了Linux终端中重复输出 -> 的问题
+
+修复了build.sh的错误
+
+删除了部分注释
 
 ## V2.5
 
