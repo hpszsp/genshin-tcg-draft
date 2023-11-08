@@ -1,4 +1,4 @@
-# Genius Invokation TCG draft pick mode V2.6
+# Genius Invokation TCG draft pick V2.6
 
 Play Genius Invokation TCG in an interesting mode
 
