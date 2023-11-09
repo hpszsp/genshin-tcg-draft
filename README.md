@@ -1,4 +1,4 @@
-# Genius Invokation TCG zzmode V2.4
+# Genius Invokation TCG draft pick
 
 Play Genius Invokation TCG in an interesting mode
 
