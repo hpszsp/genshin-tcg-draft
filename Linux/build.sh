@@ -1,3 +1,2 @@
-#!/bin/bash
-gcc -o zzmode zzmode.c
-sudo cp -v zzmode /usr/local/bin/
+gcc -o draft ./draft.c
+sudo mv -v draft /usr/local/bin/

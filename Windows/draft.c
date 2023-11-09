@@ -7,7 +7,7 @@
 #include "zfile.h"
 #include "namels.h"
 
-float VERSION = 2.5;
+float VERSION = 2.6;
 int IFGEN = 0;
 
 void reask(int charMany, char *output, char *character);
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 		formatName(argv[1]);
 		return 0;
 	}
-	printf("zzmode for Windows v%0.1f by hpszsp\n", VERSION);
+	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n", VERSION);
 	if (access("./character.cfg", 0))
 	{
 		formatName("defconfig");
@@ -67,10 +67,10 @@ int main(int argc, char* argv[])
 			break;
 		}
 		charMany++;
-		if (i >= 2000)
+		if (i >= 1024)
 		{
 			system("color 4F");
-			printf("遇到了错误，可能是输入的角色数多于300个，也可能是character.cfg中间有回车或者不是以aaaaa结尾\n");
+			printf("遇到了错误，可能是输入的角色数过多，也可能是character.cfg中间有回车或者不是以aaaaa结尾\n");
 			Sleep(3000);
 			return 0;
 		}
@@ -240,7 +240,7 @@ void nextgen2(int selectMany, char *output, char *character, int *std2)
 
 void gen(int selectMany, char *output, char *character, int *selected)
 {
-	printf("zzmode for Windows v%0.1f by hpszsp\n", VERSION);
+	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n", VERSION);
 	printf("您当前可用的角色池如下：\n\n");
 	for (int i = 0; i <= selectMany; i++)
 	{
@@ -282,7 +282,7 @@ void reask(int charMany, char *output, char *character)
 	else if (a == 'r')
 	{
 		system("cls");
-		system("zzmode.exe");
+		system("draft.exe");
 		return;
 	}
 	else if (a == 'h')

@@ -7,7 +7,7 @@
 #include "zfile.h"
 #include "namels.h"
 
-float VERSION = 2.5;
+float VERSION = 2.6;
 int IFGEN = 0;
 
 void reask(int charMany, char *output, char *character);
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 		formatName(argv[1]);
 		return 0;
 	}
-	printf("zzmode for Linux v%0.1f by hpszsp\n", VERSION);
+	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n", VERSION);
 	if (access("./character.cfg", 0))
 	{
 		formatName("defconfig");
@@ -235,7 +235,7 @@ void nextgen2(int selectMany, char *output, char *character, int *std2)
 
 void gen(int selectMany, char *output, char *character, int *selected)
 {
-	printf("zzmode for Linux v%0.1f by hpszsp\n", VERSION);
+	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n", VERSION);
 	printf("您当前可用的角色池如下：\n\n");
 	for (int i = 0; i <= selectMany; i++)
 	{
@@ -267,6 +267,7 @@ void reask(int charMany, char *output, char *character)
 {
 	fflush(stdin);
 	char a = 0;
+	getchar();
 	printf("-> ");
 	scanf("%c", &a);
 	if (a == 'y')
@@ -277,7 +278,7 @@ void reask(int charMany, char *output, char *character)
 	else if (a == 'r')
 	{
 		system("clear");
-		system("zzmode");
+		system("draft");
 		return;
 	}
 	else if (a == 'h')
