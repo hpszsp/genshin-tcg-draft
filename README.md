@@ -1,8 +1,10 @@
+<<<<<<< HEAD
 # Genius Invokation TCG draft pick V2.6
+=======
+# Genius Invokation TCG draft pick V3.0
+>>>>>>> upstream/master
 
 Play Genius Invokation TCG in an interesting mode
-
-For Windows & Linux x86_64 zh_CN.utf8
 
 实现了https://www.bilibili.com/video/BV18B4y1d7Wq
 中程序征召模式的大部分功能
@@ -13,6 +15,23 @@ For Windows & Linux x86_64 zh_CN.utf8
 
 # Changelog
 
+<<<<<<< HEAD
+=======
+## V3.0
+
+代码完全重构。之前的代码结构过于混乱，难以维护。
+
+新版本的代码具有更好的可拓展性。
+
+新版本将不再使用character.cfg，而是使用use.ini和ban.ini
+
+新版本加入了draft-ini工具用于调整配置文件
+
+#### 从V3.0开始，将不再维护Linux版
+
+#### 从V3.0开始，编译好的exe文件将放在exe-bin目录下
+
+>>>>>>> upstream/master
 ## V2.6
 
 改变了主程序名，现在由zzmode改变为draft
