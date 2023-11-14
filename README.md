@@ -13,6 +13,20 @@ For Windows & Linux x86_64 zh_CN.utf8
 
 # Changelog
 
+## V3.0
+
+代码完全重构。之前的代码结构过于混乱，难以维护。
+
+新版本的代码具有更好的可拓展性。
+
+新版本将不再使用character.cfg，而是使用use.ini和ban.ini
+
+新版本加入了draft-ini工具用于调整配置文件
+
+#### 从V3.0开始，将不再维护Linux版
+
+#### 从V3.0开始，编译好的exe文件将放在bin目录下
+
 ## V2.6
 
 改变了主程序名，现在由zzmode改变为draft
