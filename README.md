@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Genius Invokation TCG draft pick V2.6
-=======
 # Genius Invokation TCG draft pick V3.0
->>>>>>> upstream/master
 
 Play Genius Invokation TCG in an interesting mode
 
@@ -13,10 +9,6 @@ Play Genius Invokation TCG in an interesting mode
 
 目前对应原神七圣召唤4.2版本的角色池
 
-# Changelog
-
-<<<<<<< HEAD
-=======
 ## V3.0
 
 代码完全重构。之前的代码结构过于混乱，难以维护。
@@ -31,7 +23,6 @@ Play Genius Invokation TCG in an interesting mode
 
 #### 从V3.0开始，编译好的exe文件将放在exe-bin目录下
 
->>>>>>> upstream/master
 ## V2.6
 
 改变了主程序名，现在由zzmode改变为draft
