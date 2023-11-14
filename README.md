@@ -25,7 +25,7 @@ For Windows & Linux x86_64 zh_CN.utf8
 
 #### 从V3.0开始，将不再维护Linux版
 
-#### 从V3.0开始，编译好的exe文件将放在bin目录下
+#### 从V3.0开始，编译好的exe文件将放在exe-bin目录下
 
 ## V2.6
 
