@@ -10,7 +10,7 @@ void cmdread(FILE* fu, FILE* fb)
 	scanf("%s", cmdin);
 	if (!strcmp(cmdin, "help"))
 	{
-		printf("\n输入genini可以生成配置文件\nuse.ini规定了必须出现的角色\nban.ini规定了不能出现的角色\n注意：use.ini的优先级高于ban.ini\n必须使用指定的英文名\n");
+		printf("\nuse.ini规定了必须出现的角色\nban.ini规定了不能出现的角色\n注意：use.ini的优先级高于ban.ini\n必须使用指定的英文名\n");
 		printf("\nuse.ini示例: USE=Chuns Feixr Taozh\n这规定了纯水，菲谢尔，讨债人一定会出现在可选池中\n");
 		printf("\nban.ini示例: BAN=Chuns Feixr Taozh\n这规定了纯水，菲谢尔，讨债人一定不会出现在可选池中\n\n");
 		printf("输入pea查看中英文对照表\n输入vi从零开始编辑（如果已有配置文件请谨慎使用）\n输入read阅读已有的配置文件\n\n");
