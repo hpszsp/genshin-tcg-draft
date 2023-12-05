@@ -9,6 +9,8 @@ Play Genius Invokation TCG in an interesting mode
 
 目前对应原神七圣召唤4.2版本的角色池
 
+# Changelog
+
 ## V3.0
 
 代码完全重构。之前的代码结构过于混乱，难以维护。

@@ -1,6 +1,6 @@
 #include <time.h>
 #include "character.h"
-#include <io.h>
+#include <unistd.h>
 #define VERSION 3.0
 void intinit(int*p, int length)
 {
@@ -9,7 +9,7 @@ void intinit(int*p, int length)
 		p[i] = 0;
 	}
 }
-void select(int *selected, int *use, int *ban)
+void zselect(int *zselected, int *use, int *ban)
 {
 	time_t t;
 	int upsizeu = 0, upsizeb = 0;
@@ -32,40 +32,40 @@ void select(int *selected, int *use, int *ban)
 	srand((unsigned)time(&t));
 	for (int i = 0; i < upsizeu; i++)
 	{
-		selected[i] = use[i];
+		zselected[i] = use[i];
 	}
 	for (int i = upsizeu; i <= 15; i++)
 	{
-		selected[i] = rand() % 60 + 1;
+		zselected[i] = rand() % 60 + 1;
 		for (int j = 0; j < i; j++)
 		{
-			if (selected[i] == selected[j])
+			if (zselected[i] == zselected[j])
 			{
-				selected[i] = 0;
+				zselected[i] = 0;
 				i--;
 			}
 		}
 		for (int j = 0; j < upsizeb; j++)
 		{
-			if (selected[i] == ban[j])
+			if (zselected[i] == ban[j])
 			{
 				i--;
 			}
 		}
 	}
 }
-void autoprint(int *selected)
+void autoprint(int *zselected)
 {
 	for (int i = 0; i <= 15; i++)
 	{
-		int2zhprint(selected[i]);
+		int2zhprint(zselected[i]);
 		if ((i + 1) % 4 == 0)
 		{
 			printf("\n");
 		}
 	}
 }
-void inputcvt(int *selected, int *function, int functionloc)
+void inputcvt(int *zselected, int *function, int functionloc)
 {
 	fflush(stdin);
 	char input[7];
@@ -74,17 +74,17 @@ void inputcvt(int *selected, int *function, int functionloc)
 	{
 		if (strlen(input) == 1)
 		{
-			if (selected[input[0] - 49] != 0)
+			if (zselected[input[0] - 49] != 0)
 			{
-				function[functionloc] = selected[input[0] - 49];
-				selected[input[0] - 49] = 0;
+				function[functionloc] = zselected[input[0] - 49];
+				zselected[input[0] - 49] = 0;
 				return;
 			}
 		}
-		else if (selected[10 * (input[0] - 48) + input[1] - 49] != 0)
+		else if (zselected[10 * (input[0] - 48) + input[1] - 49] != 0)
 		{
-			function[functionloc] = selected[10 * (input[0] - 48) + input[1] - 49];
-			selected[10 * (input[0] - 48) + input[1] - 49] = 0;
+			function[functionloc] = zselected[10 * (input[0] - 48) + input[1] - 49];
+			zselected[10 * (input[0] - 48) + input[1] - 49] = 0;
 			return;
 		}
 	}
@@ -92,9 +92,9 @@ void inputcvt(int *selected, int *function, int functionloc)
 	{
 		for (int i = 0; i <= 15; i++)
 		{
-			if (selected[i] == zhstr2int(input) && selected[i] != 0)
+			if (zselected[i] == zhstr2int(input) && zselected[i] != 0)
 			{
-				selected[i] = 0;
+				zselected[i] = 0;
 				function[functionloc] = zhstr2int(input);
 				return;
 			}
@@ -102,7 +102,7 @@ void inputcvt(int *selected, int *function, int functionloc)
 	}
 	printf("\n输入的角色不存在或已被禁用，请重新输入 ->");
 	fflush(stdin);
-	inputcvt(selected, function, functionloc);
+	inputcvt(zselected, function, functionloc);
 }
 void outputcvt(int* banned, int usa, int usb, int usc, int usd, int *first, int firlen, int *second, int seclen)
 {
@@ -136,11 +136,11 @@ void outputcvt(int* banned, int usa, int usb, int usc, int usd, int *first, int 
 	}
 	printf("\n");
 }
-void ask(int *selected, int *banned, int *first, int *second, int step)
+void ask(int *zselected, int *banned, int *first, int *second, int step)
 {
 	system("cls");
 	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n当前可用的角色池如下:\n\n", VERSION);
-	autoprint(selected);
+	autoprint(zselected);
 	if (step == 1)
 	{
 		intinit(banned, 4);
@@ -148,85 +148,85 @@ void ask(int *selected, int *banned, int *first, int *second, int step)
 		intinit(second, 5);
 		outputcvt(banned, 0, 0, 0, 0, first, 0, second, 0);
 		printf("\n请先手禁用一个角色-> ");
-		inputcvt(selected, banned, 0);
+		inputcvt(zselected, banned, 0);
 	}
 	if (step == 2)
 	{
 		outputcvt(banned, 1, 0, 0, 0, first, 0, second, 0);
 		printf("\n请后手禁用一个角色-> ");
-		inputcvt(selected, banned, 2);
+		inputcvt(zselected, banned, 2);
 	}
 	if (step == 3)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 0, second, 0);
 		printf("\n请先手选择一个角色-> ");
-		inputcvt(selected, first, 0);
+		inputcvt(zselected, first, 0);
 	}
 	if (step == 4)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 1, second, 0);
 		printf("\n请后手选择一个角色-> ");
-		inputcvt(selected, second, 0);
+		inputcvt(zselected, second, 0);
 	}
 	if (step == 5)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 1, second, 1);
 		printf("\n请后手选择一个角色-> ");
-		inputcvt(selected, second, 1);
+		inputcvt(zselected, second, 1);
 	}
 	if (step == 6)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 1, second, 2);
 		printf("\n请先手选择一个角色-> ");
-		inputcvt(selected, first, 1);
+		inputcvt(zselected, first, 1);
 	}
 	if (step == 7)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 2, second, 2);
 		printf("\n请先手选择一个角色-> ");
-		inputcvt(selected, first, 2);
+		inputcvt(zselected, first, 2);
 	}
 	if (step == 8)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 3, second, 2);
 		printf("\n请后手选择一个角色-> ");
-		inputcvt(selected, second, 2);
+		inputcvt(zselected, second, 2);
 	}
 	if (step == 9)
 	{
 		outputcvt(banned, 1, 0, 1, 0, first, 3, second, 3);
 		printf("\n请后手禁用一个角色-> ");
-		inputcvt(selected, banned, 3);
+		inputcvt(zselected, banned, 3);
 	}
 	if (step == 10)
 	{
 		outputcvt(banned, 1, 0, 1, 1, first, 3, second, 3);
 		printf("\n请先手禁用一个角色-> ");
-		inputcvt(selected, banned, 1);
+		inputcvt(zselected, banned, 1);
 	}
 	if (step == 11)
 	{
 		outputcvt(banned, 1, 1, 1, 1, first, 3, second, 3);
 		printf("\n请先手选择一个角色-> ");
-		inputcvt(selected, first, 3);
+		inputcvt(zselected, first, 3);
 	}
 	if (step == 12)
 	{
 		outputcvt(banned, 1, 1, 1, 1, first, 4, second, 3);
 		printf("\n请后手选择一个角色-> ");
-		inputcvt(selected, second, 3);
+		inputcvt(zselected, second, 3);
 	}
 	if (step == 13)
 	{
 		outputcvt(banned, 1, 1, 1, 1, first, 4, second, 4);
 		printf("\n请后手选择一个角色-> ");
-		inputcvt(selected, second, 4);
+		inputcvt(zselected, second, 4);
 	}
 	if (step == 14)
 	{
 		outputcvt(banned, 1, 1, 1, 1, first, 4, second, 5);
 		printf("\n请先手选择一个角色-> ");
-		inputcvt(selected, first, 4);
+		inputcvt(zselected, first, 4);
 	}
 	if (step == 15)
 	{

@@ -1,6 +1,5 @@
 #include "character.h"
 #define VERSION 3.0
-#define characterMuch 61
 
 int going = 1;
 void cmdread(FILE* fu, FILE* fb)
@@ -93,7 +92,6 @@ void cmdread(FILE* fu, FILE* fb)
 
 int main()
 {
-	initcharacter();
 	FILE *fu = fopen("./use.ini", "r+w+");
 	FILE *fb = fopen("./ban.ini", "r+w+");
 	printf("Genshin TCG draft pick for Windows v%0.1f by hpszsp\n ‰»Îhelp≤Èø¥∞Ô÷˙\n\n", VERSION);
